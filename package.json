@@ -1,8 +1,8 @@
 {
   "name": "no-react-stack",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "layout stack for react",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack",
     "prepublish": "npm run build"
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/azril0409/NO-react-stack#readme",
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.14.5",

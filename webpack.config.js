@@ -7,7 +7,7 @@ module.exports = {
     output: {
         library: 'no-react-stack',
         libraryTarget: 'umd',
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'lib'),
         filename: 'index.js',
     },
     externals: {

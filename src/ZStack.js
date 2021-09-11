@@ -5,7 +5,6 @@ import VerticalAlignment from "./VerticalAlignment";
 export default ({className, alignment, style, children, ...rest}) => {
     const horizontal = alignment?.horizontal ? alignment?.horizontal : 'center'
     const vertical = alignment?.vertical ? alignment?.vertical: 'center'
-    console.log(`horizontal: ${horizontal}, vertical: ${vertical}`)
     const childRef = []
     const [size, setSize] = useState({width: undefined, height: undefined});
     useEffect(() => {
