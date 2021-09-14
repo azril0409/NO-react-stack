@@ -1,5 +1,5 @@
 import React from "react";
 
-const Spacer = () => <div style={{flexGrow:1}} />
+const Spacer = React.forwardRef(() => <div style={{flexGrow:1}} />)
 
 export default Spacer
