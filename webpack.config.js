@@ -23,6 +23,12 @@ module.exports = {
             commonjs: 'react-dom',
             amd: 'react-dom'
         },
+        'react-dom': {
+            root: 'ReactDOM',
+            commonjs2: 'react-dom',
+            commonjs: 'react-dom',
+            amd: 'react-dom'
+        },
     },
     module: {
         rules: [{

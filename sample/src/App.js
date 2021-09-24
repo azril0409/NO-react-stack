@@ -1,29 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import {VStack, ZStack, Spacer} from "no-react-stack";
+import {ZStack, Alignment} from "no-react-stack";
+import React, {useEffect, useState} from "react";
+
 
 function App() {
-    return (<VStack className="App App-header" style={{width: '100vw'}}>
-            <Spacer/>
-            <ZStack>
-                <VStack>
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </VStack>
-                <img src={logo} className="App-logo" alt="logo" />
-            </ZStack>
-            <Spacer/>
-        </VStack>
-    );
+    const [show, setShow] = useState(false)
+    const [cont, setCont] = useState(1)
+    useEffect(() => {
+        setTimeout(() => {
+            setShow(true)
+        }, 3000)
+    }, [])
+    return (<ZStack style={{height: '100vh', width: '100vw'}} alignment={Alignment.TOP_LEFT}>
+        {
+            show ? <div style={{height: '200px', width: '200px', backgroundColor: 'red'}}/> : undefined
+        }
+        <div style={{height: '150px', width: '150px', backgroundColor: 'green'}}/>
+        <div style={{height: '100px', width: '100px', backgroundColor: 'blue'}} alignment={Alignment.BOTTOM_RIGHT}/>
+        <div style={{height: '50px', width: '50px', backgroundColor: 'white'}}/>
+    </ZStack>);
 }
 
 export default App;

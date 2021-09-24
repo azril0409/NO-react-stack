@@ -1,12 +1,8 @@
-import React, {useRef} from 'react';
-import {isChildrenHaveSpacer, getHorizontalAlignmentStyle, useResize} from "./units";
+import React from 'react';
+import {isChildrenHaveSpacer, getHorizontalAlignmentStyle} from "./units";
 
 export default React.forwardRef(({className, alignment, style, children, ...rest}, ref) => {
     const height = isChildrenHaveSpacer(children) ? '100%' : undefined
-    const resize = useResize()
-    const CreateRef = () => {
-        return useRef();
-    }
     return (<div
         {...rest}
         ref={ref}
@@ -17,22 +13,22 @@ export default React.forwardRef(({className, alignment, style, children, ...rest
             flexDirection: 'column',
             alignContent: 'stretch',
             alignItems: getHorizontalAlignmentStyle(alignment),
-            width: resize.size.which,
             height: height,
             ...style
         }}
     >{
         React.Children.map(children, (child, i) => {
-            const ref = CreateRef()
-            resize.observe(ref)
-            return React.cloneElement(child, {
+            if (!child?.type) return child
+            const ref = child.ref
+            const element = React.cloneElement(child, {
                 key: i,
                 style: {
-                    alignSelf: getHorizontalAlignmentStyle(child.props.alignment),
                     ...child.props.style
                 },
                 ref: ref
             });
+            return element
         })
     }</div>)
 })
+
