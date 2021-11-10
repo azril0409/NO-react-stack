@@ -1,6 +1,6 @@
 {
   "name": "no-react-stack",
-  "version": "1.0.2-rc",
+  "version": "1.0.4-rc",
   "description": "layout stack for react",
   "main": "index.js",
   "scripts": {

@@ -8,7 +8,7 @@ export const isChildrenHaveSpacer = (children) => {
 }
 
 export const childrenIsSpacer = (child) => {
-    return child?.type?.toString()?.search("Spacer") > 0
+    return child?.type?.toString()?.search("spacer") > 0
 }
 
 export const getHorizontalAlignmentStyle = (alignment) => {
